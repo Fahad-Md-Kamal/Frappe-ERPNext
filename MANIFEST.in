@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include alesha_product *.css
+recursive-include alesha_product *.csv
+recursive-include alesha_product *.html
+recursive-include alesha_product *.ico
+recursive-include alesha_product *.js
+recursive-include alesha_product *.json
+recursive-include alesha_product *.md
+recursive-include alesha_product *.png
+recursive-include alesha_product *.py
+recursive-include alesha_product *.svg
+recursive-include alesha_product *.txt
+recursive-exclude alesha_product *.pyc
