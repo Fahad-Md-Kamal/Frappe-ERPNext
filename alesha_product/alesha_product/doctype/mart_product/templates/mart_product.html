@@ -1,0 +1,23 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+
+<div class="row">
+    <div class="col-6">
+        <img class="rounded" src="{{ image }}" alt="{{ image }}">
+
+    </div>
+    <div class="col-6">
+        <h1>{{ title }}</h1>
+        <p class="text-muted" >SKU: {{ product_sku }}</p>
+        <p class="text-muted" >Price: {{ unit_price }}</p>
+        <p class="text-primary" >Seller: {{ vendor }}</p>
+        <p class="card-text">About Product</p>
+        <p class="card-text">{{ product_detail }}</p>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->

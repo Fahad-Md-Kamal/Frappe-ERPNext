@@ -6,9 +6,11 @@ def get_data():
 	return [
 		{
 			"module_name": "Alesha Product",
-			"color": "blue",
-			"icon": "icon-book",
-			"type": "module",
+			"category":"Modules",
 			"label": _("Alesha Product")
+			"color": "blue",
+			"icon": "octicon octicon-book",
+			"type": "module",
+			"description": "Alesha Mart Product Management"
 		}
 	]

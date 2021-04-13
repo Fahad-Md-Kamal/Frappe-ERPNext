@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "autoname": "AML.PROD.SKU.#####",
+ "creation": "2021-04-13 17:12:25.013450",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_name",
+  "route",
+  "product_sku",
+  "status",
+  "unit_price",
+  "vendor",
+  "image",
+  "product_detail",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_sku",
+   "fieldtype": "Data",
+   "label": "Product SKU"
+  },
+  {
+   "fieldname": "unit_price",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Unit Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_detail",
+   "fieldtype": "Text Editor",
+   "label": "Product Detail"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fetch_from": "vendor.full_name",
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Vendors"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nOut of Stock"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Mart Product",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Route"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-04-13 17:29:01.918655",
+ "modified_by": "Administrator",
+ "module": "Alesha Product",
+ "name": "Mart Product",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Developer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Operations",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "route": "mart_products",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "product_name",
+ "track_changes": 1
+}
