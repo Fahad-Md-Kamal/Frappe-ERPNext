@@ -355,3 +355,115 @@ In such case:
 ***
 # Creating Custom Application for Frappe:
 
+**Creating a custom Module**
+<small> Here I'm going to create a module named Alesha Products
+</small>
+<br>
+
+### Creating the Module / app
+<br>
+
+Navigate to the project
+> bench new-app alesha_product
+
+***This will ask you app specific information along with some default values***
+
+Once the installation is complete, you will have to install the app to the site. By default the site doesn't know the app details.
+
+<br>
+
+In order to install the application to the site you need to apply the following command.
+> bench --site <site_name> install-app <app_or_module_name>
+
+In order to check installed apps of a particular site:
+> bench --site <site_name> list-apps
+
+***There are several site commands. To see all site commands.***
+> bench --site <site_name> --help
+
+The custom app/module is available in the site. Now we have to create doctype for the application to use.
+
+In order to customize the site we need to run the site with enabled developer mode.
+To do that type:
+> bench --site <site_name> set-config --global developer_mode 1
+
+<br>
+<br>
+
+## DocType
+***
+In simple, DocType is the database table name of Frappe Framework.
+You will be directly interecting with database tabels using Frappe's DocType.
+
+<br>
+
+In our custom app/ module we will create two doctypes.
+1. Vendors
+2. Alesha Products
+
+<br>
+
+### Creating DocType
+***
+While in Desk, type "doctype" in the search bar and select the DocType List option. You will be navigated to the DocType list where you will see a bunch of DocTypes. These are the DocTypes that are bundled with the framework.
+
+***The first doctype we will create is Vendors.***
+***
+
+To create it, click on New.
+1. Enter Name as Alesha Vendors.
+2. Select Library Management in Module
+3. Add the following fields in the Fields table:
+
+    > Image(Attach Image)
+
+    > Full Name (Data)
+    
+    > Eamil (Data)
+    
+    > Contact (Text Editor)
+    
+    > Address (Data)
+    
+    > Bank Name (data)
+    
+    > Bank Account Name (data)
+    
+    > Bank Account Number (data)
+    
+    > Route (data)
+    
+    > Vendor Type (Select) Enter options: Shop and Company (Type Shop, hit enter, then Type Company)
+
+4. To save the form, Click save button
+5. add the following text to the auto naming field in the bottom so that the vendor name is unique throughout the list.
+
+    ALM.VEN.#####
+
+6. In Form Settings section add the insert image to the text box. This lets frappe know which field of the table is image field so that it can handle that field in such way.
+
+7. In View Settings section, add which form field name you want to name the html view title name
+
+    <small>**For my purpose I've used full_name field**</small>
+
+8. You can also restict the permission to different user roles from the Permission Rules section. 
+
+    <small>**Here I've added Business Developer who has the permission to read, write, create and delete permission. On the contrary, Operations role will have only read permission.**</small>
+
+9. Now save again. Reload the page by selecting Reload option from three dot button beside the save button.
+
+10. Go to vendor List
+11. Create Vendor
+
+
+You will see that vandor with your given information has shown in the vendor list.
+
+Now Let's customize the Form look.
+
+1. Add row to vendor form fields table.
+2. Make the type Coumn Break
+3. Drag it to middle of the fields table rows.
+4. Save changes. 
+5. Now go to add new vendor. You will see the long for is now splitted into two columns.
+6. We can also seperate a section of form to new sectin. In that case we have to add another row to the table as set the type Section Break
+7. Than drag the row before the row where you want to break the section.
