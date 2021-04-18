@@ -458,7 +458,9 @@ To create it, click on New.
 
 You will see that vandor with your given information has shown in the vendor list.
 
-Now Let's customize the Form look.
+***By Checking the Database You can also see new database table of named 'tabVendor'***
+
+### Now Let's customize the Form look.
 
 1. Add row to vendor form fields table.
 2. Make the type Coumn Break
@@ -467,3 +469,48 @@ Now Let's customize the Form look.
 5. Now go to add new vendor. You will see the long for is now splitted into two columns.
 6. We can also seperate a section of form to new sectin. In that case we have to add another row to the table as set the type Section Break
 7. Than drag the row before the row where you want to break the section.
+
+
+<br>
+<hr>
+<br>
+
+## Now Add Let's Add the Product DocType to our custom DocType
+***
+
+1. Go to Doctype List.
+2. press <kbd> + add DocType </kbd>  blue Button
+3. Enter Doctype Name
+4. Add Module Name
+5. Check Is Submittable Below Module selection text input.
+(This add three events to the form to save it)
+6. Add desired fields
+7. Modify Naming, Form Settings, View Settings, Permission Rules
+8. Save the form
+
+### Adding Web View for the Product ###
+1. Check the "Has Web View", Allow Guest to View, 
+Index Web Pages for Search
+2. Add your DocType name into the Route input field e.g. Mart Product as mart_product.
+3. Add a new row to the Form Fields table named Route
+4. Make the field Hidden from row edit menu since it will be auto generated.
+5. Save Changes.
+
+## Adding Custom Module to Our admin deshboard with outher module list.
+
+1. Type workspace at searchbox and navigate to the Workspace List.
+2. press the <kbd> + Add Workspace </kbd> button.
+3. Enter your Module Name that you want to call within the site.
+4. Select the Module for the Module list
+5. Select Category
+6. Enter Icon name that you want to represent your app or leave blank
+7. leave Onboarding blank
+8. check Is Standared from the right section
+9. Give Dashboards sectionlabel a name and add chart to teh charts row.
+10. Add Module specific all doctypes to the shortcut section and link them (The System will suggest all of the names, No need to memorise or else.)
+11. Add Link Cards similarly.
+12. Save and reload.
+13. Now go to the admin home page.
+14. Make a Hard Refreash or press <kbd>CTL</kbd> + <kbd>SHIFT</kbd> + <kbd> R </kbd>
+
+You can see your Custom Module at the Left side of all module lists with your Given name and Icon along with
