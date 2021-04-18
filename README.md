@@ -39,6 +39,9 @@ Install Virtual environment by:
 Create python virtual environment: 
 > python3 -m venv env
 
+![100002010000032D0000012B6AB89DD1260CD9C2](https://user-images.githubusercontent.com/34704464/115140638-1123ed00-a05a-11eb-94bd-305645c87a7f.png)
+
+
 ## Install Node Js:
 <hr>
 
@@ -54,11 +57,10 @@ This will:
 * Install all necessary packages and 
 * Refresh the apt cache.
 
-<br>
 ***If you need another Node.js version, for example 12.x, change the setup_14.x with setup_12.x***
 
-<br>
-<br>
+![10000201000004680000023975178A769CA9C0C3](https://user-images.githubusercontent.com/34704464/115140671-429cb880-a05a-11eb-9616-2c0c4b2e752e.png)
+
 
 Once the NodeSource repository is enabled, install Node.js and npm:
 > sudo apt install nodejs
@@ -73,13 +75,20 @@ Check Node Version
 Check npm version
 > npm --version
 
-<br>
+
+![10000201000004680000023978A0A5CF4B94B19A](https://user-images.githubusercontent.com/34704464/115140695-6c55df80-a05a-11eb-8c96-35151a52340e.png)
+
 
 ### Install yarn globally using node ###
 > sudo npm install -g yarn
 
+![10000201000004830000011909DADA1F43927846](https://user-images.githubusercontent.com/34704464/115140721-8c859e80-a05a-11eb-8c4e-4a352545ebdc.png)
+
 ### Install git, python, and redis ###
 > sudo apt install git python-dev redis-server
+
+
+![100002010000046800000239D17A35A35AB20CDB](https://user-images.githubusercontent.com/34704464/115140746-a7581300-a05a-11eb-8b46-55c5c509e802.png)
 
 
 ### Install MariaDB ###
@@ -103,10 +112,11 @@ Check npm version
 > sudo apt-get update 
 
 > sudo apt-get install mariadb-server-10.3
+
+
+![1000020100000468000001DF171A126A852456B9](https://user-images.githubusercontent.com/34704464/115140766-c787d200-a05a-11eb-82f9-90146d1f95da.png)
+
 <hr>
-
-
-<br>
 
 ***During this installation you'll be prompted to set the MySQL root password.***
 
@@ -133,8 +143,11 @@ sudo mysql_secure_installation***</strong>
 > Remove test database and access to it? [Y/n] y
 > Reload privilege tables now? [Y/n] y
 
-<br>
-<br>
+
+![100002010000045600000227B0C40BBBE88F5152](https://user-images.githubusercontent.com/34704464/115141003-f94d6880-a05b-11eb-877b-95eed4e1a60c.png)
+![1000020100000456000002271EA24C79B6C9BC36](https://user-images.githubusercontent.com/34704464/115140984-dcb13080-a05b-11eb-8289-0fc1341b745a.png)
+![100002010000045600000227570FD58ACDCA0E2F](https://user-images.githubusercontent.com/34704464/115141067-4598a880-a05c-11eb-91c7-058f25758b1d.png)
+
 <hr>
 
 ***It is really important that you remember this password, since it'll be useful later on.***
@@ -145,6 +158,11 @@ sudo mysql_secure_installation***</strong>
 
 ### You'll also need the MySQL database development files.
 > sudo apt-get install libmysqlclient-dev
+
+
+![1000020100000456000002274338C021506DA343](https://user-images.githubusercontent.com/34704464/115141097-6660fe00-a05c-11eb-990e-4ed6fc7b25cf.png)
+
+<br>
 
 ***Now, edit the MariaDB configuration file.***
 > sudo nano /etc/mysql/my.cnf
@@ -172,9 +190,9 @@ sudo mysql_secure_installation***</strong>
 
 > default-character-set = utf8mb4
 
-<br>
-<br>
-<br>
+
+![1000020100000456000002813505EB54324D2094](https://user-images.githubusercontent.com/34704464/115141126-88f31700-a05c-11eb-9488-f4dc59b400d1.png)
+
 
 <hr>
 Restart MariaDB and enable it to automatically start at boot time.
@@ -188,6 +206,8 @@ Now, just restart the mysql service and and check status.
 
 > service mysql status
 
+
+![1000020100000456000002814561C2EC7A41157B](https://user-images.githubusercontent.com/34704464/115141166-bc35a600-a05c-11eb-96a4-f13c89c3fc14.png)
 
 ## Install wkhtmltopdf:
 > sudo apt-get install xvfb libfontconfig wkhtmltopdf
@@ -237,8 +257,8 @@ sudo apt -y install nginx redis-server
 
 > bench init frappe-bench
 
-<br>
-<br>
+![10000201000005FD000001CD0FDE34F3CC332ED2](https://user-images.githubusercontent.com/34704464/115141278-28180e80-a05d-11eb-8cff-96575dbf0220.png)
+![1000020100000363000002C91928EAB6FBC66FD9](https://user-images.githubusercontent.com/34704464/115141307-51389f00-a05d-11eb-835c-c9265c34b73f.png)
 
 ***While installing you might see some errors run the following command to install the dependency in order to avoid the error.***
 
@@ -254,6 +274,8 @@ sudo apt -y install nginx redis-server
 <br>
 
 The above command will prompt you for the MySQL root password. Provide the password which you have set for the MySQL root user earlier. It will also ask you to set a new password for the administrator account. You will need this password later to log into the administrator dashboard.
+
+![10000201000004F80000015436722D45B2D09340](https://user-images.githubusercontent.com/34704464/115141330-6b727d00-a05d-11eb-8184-e2d0aaefacb4.png)
 
 <br>
 
@@ -273,6 +295,9 @@ Add the following lines at the end:
 > [mysqld]
 
 > skip-grant-tables
+
+![10000201000004F80000021A8F54FBEFDC0F7D86](https://user-images.githubusercontent.com/34704464/115141388-c2785200-a05d-11eb-8c2e-180c40be5abc.png)
+
 
 <br>
 
@@ -316,10 +341,13 @@ Remove the <strong>skip-grant-tables</strong> from <strong>/etc/mysql/my.cnf</st
 ### Now download ERPNext installation files from the remote git repository using Bench.
 > bench get-app erpnext https://github.com/frappe/erpnext
 
+![10000201000004F8000001F60A62D5F2F1D54C59](https://user-images.githubusercontent.com/34704464/115141420-ea67b580-a05d-11eb-9918-c484917f7358.png)
+
 <br>
 
 ### Install ERPNext on your newly created site.
 > bench --site erp.testsite install-app erpnext
+
 
 <br>
 You can start the application immediately to check if the application installed successfully. 
