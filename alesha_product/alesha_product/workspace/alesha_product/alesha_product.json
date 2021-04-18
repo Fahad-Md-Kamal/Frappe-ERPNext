@@ -1,0 +1,71 @@
+{
+ "cards_label": "Alesha Cards",
+ "category": "Modules",
+ "charts": [
+  {
+   "chart_name": "Project Summary",
+   "label": "Project summer"
+  }
+ ],
+ "charts_label": "Alesha Product",
+ "creation": "2021-04-17 12:58:57.516981",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "hr",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Alesha Product",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Mart Product",
+   "link_to": "Mart Product",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Mart Vendors",
+   "link_to": "Vendors",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2021-04-17 13:06:16.349320",
+ "modified_by": "Administrator",
+ "module": "Alesha Product",
+ "name": "Alesha Product",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Alesha Mart Product",
+   "link_to": "Mart Product",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Alesha Vendors",
+   "link_to": "Vendors",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Wrong Product",
+   "link_to": "Product",
+   "type": "DocType"
+  }
+ ],
+ "shortcuts_label": "Alesha Product"
+}
