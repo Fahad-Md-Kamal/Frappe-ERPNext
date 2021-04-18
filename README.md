@@ -527,8 +527,13 @@ Index Web Pages for Search
 ## Adding Custom Module to Our admin deshboard with outher module list.
 
 1. Type workspace at searchbox and navigate to the Workspace List.
+
+![Screenshot from 2021-04-18 15-15-05](https://user-images.githubusercontent.com/34704464/115141500-81347200-a05e-11eb-86a2-f70257617ca2.png)
+
 2. press the <kbd> + Add Workspace </kbd> button.
-3. Enter your Module Name that you want to call within the site.
+![Screenshot from 2021-04-18 15-15-27](https://user-images.githubusercontent.com/34704464/115141548-d2446600-a05e-11eb-9809-9a5e39201692.png)
+
+3. Enter your Module Name that you want to call within.
 4. Select the Module for the Module list
 5. Select Category
 6. Enter Icon name that you want to represent your app or leave blank
@@ -537,8 +542,14 @@ Index Web Pages for Search
 9. Give Dashboards sectionlabel a name and add chart to teh charts row.
 10. Add Module specific all doctypes to the shortcut section and link them (The System will suggest all of the names, No need to memorise or else.)
 11. Add Link Cards similarly.
+
+![Screenshot from 2021-04-18 15-16-46](https://user-images.githubusercontent.com/34704464/115141564-eb4d1700-a05e-11eb-9f40-9b28511f8879.png)
+
+
 12. Save and reload.
 13. Now go to the admin home page.
 14. Make a Hard Refreash or press <kbd>CTL</kbd> + <kbd>SHIFT</kbd> + <kbd> R </kbd>
 
 You can see your Custom Module at the Left side of all module lists with your Given name and Icon along with
+
+![Screenshot from 2021-04-18 15-17-03](https://user-images.githubusercontent.com/34704464/115141601-159ed480-a05f-11eb-9b94-21a54e4b4329.png)
