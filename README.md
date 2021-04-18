@@ -380,8 +380,17 @@ In such case:
 <br>
 <br>
 
+<hr>
+<hr>
+<hr>
+<hr>
+
+<br>
+<br>
+<br>
+
 ***
-# Creating Custom Application for Frappe:
+# Create & Add Custom Application to site:
 
 **Creating a custom Module**
 <small> Here I'm going to create a module named Alesha Products
