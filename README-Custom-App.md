@@ -36,3 +36,4 @@ This will add following code to the sites/bigtech/site_config.json file:
 <br>
 
 This will create new file to your custom app directory called doctype.
+
