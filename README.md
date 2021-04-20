@@ -5,52 +5,65 @@
 <br>
 
 #### Prerequisite: ####
-<hr>
+```
+Python 3.6+
 
-* Python 3.6+
-* Node.js 12
-* Redis 5 &nbsp; &nbsp; &nbsp; &nbsp; (caching and real time updates)
-* MariaDB 10.3.x / Postgres 9.5.x   &nbsp; &nbsp; &nbsp; &nbsp; (to run database driven apps)
-* yarn 1.12+  &nbsp; &nbsp; &nbsp; &nbsp; (js dependency manager)
-* pip 20+  &nbsp; &nbsp; &nbsp; &nbsp; (py dependency manager)
-* wkhtmltopdf  &nbsp; &nbsp; &nbsp; &nbsp; (version 0.12.5 with patched qt)  (for pdf generation)
-* cron  &nbsp; &nbsp; &nbsp; &nbsp; (bench's scheduled jobs: automated certificate renewal scheduled backups)
+Node.js 12
 
-* NGINX  
+Redis 5 (caching and real time updates)
 
-<br>
+MariaDB 10.3.x / Postgres 9.5.x (to run database driven apps)
+
+yarn 1.12+          (js dependency manager)
+
+pip 20+             (py dependency manager)
+
+wkhtmltopdf         (version 0.12.5 with patched qt)  (for pdf generation)
+
+cron                (bench's scheduled jobs: automated certificate renewal scheduled backups)
+
+NGINX
+```
 
 ### Create a Virtual Environment on the local machine’s desired directory.
 <small> For my case, I’m going to create my project on Desktop’s subdirectory (ERPNext Folder). </small>
-<br>
-<br>
 
 Open the terminal by pressing:
 <kbd>CTL</kbd> + <kbd>ATL</kbd>+ <kbd>T</kbd>
 
 Navigate into the Desktop by typing the command: 
-> cd Desktop/
-
+```
+cd Desktop/
+```
 Create subfolder: 
-> mkdir ERPNext
+```
+mkdir ERPNext
+```
 
 Install Virtual environment by: 
-> sudo apt-get install python3-venv
+```
+sudo apt-get install python3-venv
+```
 
 Create python virtual environment: 
-> python3 -m venv env
-
+```
+python3 -m venv env
+```
 ![100002010000032D0000012B6AB89DD1260CD9C2](https://user-images.githubusercontent.com/34704464/115140638-1123ed00-a05a-11eb-94bd-305645c87a7f.png)
 
 
 ## Install Node Js:
-<hr>
-
 Install curl first: 
-> sudo apt install curl
+
+```
+sudo apt install curl
+```
 
 Download and execute the NodeSource installation script: 
-> curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+```
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+```
 
 This will:
 * Add script of NodeSource signing key to your system, 
@@ -64,80 +77,83 @@ This will:
 
 
 Once the NodeSource repository is enabled, install Node.js and npm:
-> sudo apt install nodejs
 
-<br>
+```
+sudo apt install nodejs
+```
 
 Check Node Version
-> node --version
 
-<br>
+```
+node --version
+```
+
 
 Check npm version
-> npm --version
 
+```
+npm --version
+```
 
 ![10000201000004680000023978A0A5CF4B94B19A](https://user-images.githubusercontent.com/34704464/115140695-6c55df80-a05a-11eb-8c96-35151a52340e.png)
 
 
 ### Install yarn globally using node ###
-> sudo npm install -g yarn
 
+```
+sudo npm install -g yarn
+```
 ![10000201000004830000011909DADA1F43927846](https://user-images.githubusercontent.com/34704464/115140721-8c859e80-a05a-11eb-8c4e-4a352545ebdc.png)
 
 ### Install git, python, and redis ###
-> sudo apt install git python-dev redis-server
 
+```
+sudo apt install git python-dev redis-server
+```
 
 ![100002010000046800000239D17A35A35AB20CDB](https://user-images.githubusercontent.com/34704464/115140746-a7581300-a05a-11eb-8b46-55c5c509e802.png)
 
 
 ### Install MariaDB ###
-> sudo apt-get install software-properties-common
 
-<br>
-<br>
-<hr>
+```
+sudo apt-get install software-properties-common
+```
 
 ***If you are on Ubuntu version older than 20.04, run this before installing MariaDB:***
-> apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.ubuntu-tw.org/mirror/mariadb/repo/10.3/ubuntu xenial main'
 
-<hr>
-<br>
-<br>
-
+```
+apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8 add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.ubuntu-tw.org/mirror/mariadb/repo/10.3/ubuntu xenial main'
+```
 
 ***If you are on version Ubuntu 20.04, then MariaDB is available in default repo and you can directly run the below commands to install it***
 
 
-> sudo apt-get update 
-
-> sudo apt-get install mariadb-server-10.3
-
+```
+sudo apt-get update 
+sudo apt-get install mariadb-server-10.3
+```
 
 ![1000020100000468000001DF171A126A852456B9](https://user-images.githubusercontent.com/34704464/115140766-c787d200-a05a-11eb-82f9-90146d1f95da.png)
 
-<hr>
 
 ***During this installation you'll be prompted to set the MySQL root password.***
 
-
-<hr>
 <strong>***N.B: If you are not prompted, you'll have to initialize the MySQL server setup yourself. You can do that by running the command.
-(Remember: only run it if you're not prompted the password during setup.)
-sudo mysql_secure_installation***</strong>
-<hr>
+(Remember: only run it if you're not prompted the password during setup.)***</strong>
 
-<br>
+```
+sudo mysql_secure_installation
+```
 
 ***You will be prompted with the following commands during the process***
 
-<hr>
+
 
 >Enter current password for root (enter for none):
->> Change the root password? [Y/n] y
->> New password:
->> Re-enter new password:
+> Change the root password? [Y/n] y
+> New password:
+> Re-enter new password:
 
 > Remove anonymous users? [Y/n] y
 > Disallow root login remotely? [Y/n] y
@@ -149,31 +165,24 @@ sudo mysql_secure_installation***</strong>
 ![1000020100000456000002271EA24C79B6C9BC36](https://user-images.githubusercontent.com/34704464/115140984-dcb13080-a05b-11eb-8289-0fc1341b745a.png)
 ![100002010000045600000227570FD58ACDCA0E2F](https://user-images.githubusercontent.com/34704464/115141067-4598a880-a05c-11eb-91c7-058f25758b1d.png)
 
-<hr>
 
 ***It is really important that you remember this password, since it'll be useful later on.***
 
-<hr>
-<br>
-<br>
-
 ### You'll also need the MySQL database development files.
-> sudo apt-get install libmysqlclient-dev
-
+```
+sudo apt-get install libmysqlclient-dev
+```
 
 ![1000020100000456000002274338C021506DA343](https://user-images.githubusercontent.com/34704464/115141097-6660fe00-a05c-11eb-990e-4ed6fc7b25cf.png)
 
-<br>
 
 ***Now, edit the MariaDB configuration file.***
-> sudo nano /etc/mysql/my.cnf
-
-
-<br>
-<br>
+```
+sudo nano /etc/mysql/my.cnf
+```
 
 ***Add the following line to the end:***
-<hr>
+
 
 ```
 [mysqld]
