@@ -143,13 +143,19 @@ sudo mysql_secure_installation
 
 
 >Enter current password for root (enter for none):
+
 > Change the root password? [Y/n] y
+
 > New password:
+
 > Re-enter new password:
 
 > Remove anonymous users? [Y/n] y
+
 > Disallow root login remotely? [Y/n] y
+
 > Remove test database and access to it? [Y/n] y
+
 > Reload privilege tables now? [Y/n] y
 
 
@@ -368,7 +374,6 @@ sudo chown -R mhfahad:mhfahad *
 ```
 
 ## Now start the app with the command:
-***
 ```
 bench start
 ```
@@ -376,12 +381,6 @@ bench start
 <br>
 <br>
 <br>
-
-<hr>
-<hr>
-<hr>
-<hr>
-
 <br>
 <br>
 <br>
