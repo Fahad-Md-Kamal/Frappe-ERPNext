@@ -1,4 +1,5 @@
 # A guide-line for frappe and ERPNext framework #
+[Official Frappe Documentation](https://frappeframework.com/docs/user/en/basics)
 
 ### Installation of Frappe framework and ERPNext on ubuntu 20.04 with python3 version ###
 <br>
@@ -452,25 +453,18 @@ To create it, click on New.
 2. Select Library Management in Module
 3. Add the following fields in the Fields table:
 
-    > Image(Attach Image)
-
-    > Full Name (Data)
-    
-    > Eamil (Data)
-    
-    > Contact (Text Editor)
-    
-    > Address (Data)
-    
-    > Bank Name (data)
-    
-    > Bank Account Name (data)
-    
-    > Bank Account Number (data)
-    
-    > Route (data)
-    
-    > Vendor Type (Select) Enter options: Shop and Company (Type Shop, hit enter, then Type Company)
+```
+    Image(Attach Image)
+    Full Name (Data) 
+    Eamil (Data)    
+    Contact (Text Editor)    
+    Address (Data)    
+    Bank Name (data)    
+    Bank Account Name (data)    
+    Bank Account Number (data)    
+    Route (data)    
+    Vendor Type (Select) Enter options: Shop and Company (Type Shop, hit enter, then Type Company)
+```
 
 4. To save the form, Click save button
 5. add the following text to the auto naming field in the bottom so that the vendor name is unique throughout the list.

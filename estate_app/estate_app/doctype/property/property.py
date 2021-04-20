@@ -7,13 +7,21 @@ import frappe
 from frappe.model.document import Document
 
 class Property(Document):
-	
-	def validate(self):
-		if (self.property_type == "Flat"):
-			pass
+
+	def after_insert(self):
+		print('\n\n\n ---------- \n\n\n')
+		frappe.msgprint((f'Property <b>{self.name}</b> insertedd successfully'));
+
+
+	# def validate(self):
+	# 	if (self.property_type == "Flat"):
+	# 		for amenity in self.amenities:
+	# 			if(amenity.amenity == "Outdoor Kitchen"):
+	# 				frappe.throw(f"Property of type <b>Flat</b> should not have <b>{amenity.amenity}</b>")
 
 			# SQL
 			# amenity = frappe.db.sql(f"""SELECT amenity FROM `tabProperty Amenity Detail` WHERE parent="{self.name}" AND parenttype="Property" AND amenity="Outdoor Kitchen";""", as_dict=True)
 			# print(f"\n\n\n{amenity}\n\n\n")
 			# if amenity:
 			# 	frappe.throw(f"Property of type <b>Flat</b> Should not have amenity <b>{amenity[0]['amenity']}</b>")
+

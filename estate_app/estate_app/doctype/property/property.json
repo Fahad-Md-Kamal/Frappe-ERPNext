@@ -60,10 +60,11 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "agent.email",
+   "depends_on": "agent",
+   "fetch_from": "agent.agent_name",
    "fieldname": "agent_email",
    "fieldtype": "Data",
-   "label": "Agent Email",
+   "label": "Agent Name",
    "read_only": 1
   },
   {
@@ -96,7 +97,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-20 08:57:32.164448",
+ "modified": "2021-04-20 10:53:11.755731",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",
