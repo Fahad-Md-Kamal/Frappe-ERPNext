@@ -175,22 +175,18 @@ sudo mysql_secure_installation***</strong>
 ***Add the following line to the end:***
 <hr>
 
-> [mysqld]
-> innodb-file-format=barracuda
+```
+[mysqld]
+innodb-file-format=barracuda
+innodb-file-per-table=1
+innodb-large-prefix=1
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
 
-> innodb-file-per-table=1
-
-> innodb-large-prefix=1
-
-> character-set-client-handshake = FALSE
-
-> character-set-server = utf8mb4
-> collation-server = utf8mb4_unicode_ci
-
-> [mysql]
-
-> default-character-set = utf8mb4
-
+[mysql]
+default-character-set = utf8mb4
+```
 
 ![1000020100000456000002813505EB54324D2094](https://user-images.githubusercontent.com/34704464/115141126-88f31700-a05c-11eb-9488-f4dc59b400d1.png)
 
@@ -198,21 +194,24 @@ sudo mysql_secure_installation***</strong>
 <hr>
 Restart MariaDB and enable it to automatically start at boot time.
 
-> sudo systemctl restart mariadb
-
-> sudo systemctl enable mariadb
+```
+sudo systemctl restart mariadb
+sudo systemctl enable mariadb
+```
 
 Now, just restart the mysql service and and check status.
-> sudo service mysql restart
 
-> service mysql status
-
+```
+sudo service mysql restart
+service mysql status
+```
 
 ![1000020100000456000002814561C2EC7A41157B](https://user-images.githubusercontent.com/34704464/115141166-bc35a600-a05c-11eb-96a4-f13c89c3fc14.png)
 
 ## Install wkhtmltopdf:
-> sudo apt-get install xvfb libfontconfig wkhtmltopdf
-
+```
+sudo apt-get install xvfb libfontconfig wkhtmltopdf
+```
 <br>
 
 (Activate the virtual environment with the command: source env/bin/activate)
@@ -221,161 +220,157 @@ Now, just restart the mysql service and and check status.
 <br>
 
 ## Install Nginx and Redis:
+```
 sudo apt -y install nginx redis-server
-
-<br>
+```
 
 ## Start Nginx and enable it to start at boot time.
-> sudo systemctl start nginx
 
-> sudo systemctl enable nginx
+```
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
 
-<br>
 
 ## Start Redis and enable it to start at boot time.
-> sudo systemctl start redis-server
 
-> sudo systemctl enable redis-server
-
-
-<br>
+```
+sudo systemctl start redis-server
+sudo systemctl enable redis-server
+```
 
 ## Install Frappe:
-
-> pip3 install frappe-bench
-
-<br>
+```
+pip3 install frappe-bench
+```
 
 ***Confirm the bench installation by checking version***
 
-> bench --version
-
-<br>
-<br>
+```
+bench --version
+```
 
 ## Create your first bench folder.
-<hr>
 
-> bench init frappe-bench
+```
+bench init frappe-bench
+```
 
 ![10000201000005FD000001CD0FDE34F3CC332ED2](https://user-images.githubusercontent.com/34704464/115141278-28180e80-a05d-11eb-8cff-96575dbf0220.png)
 ![1000020100000363000002C91928EAB6FBC66FD9](https://user-images.githubusercontent.com/34704464/115141307-51389f00-a05d-11eb-835c-c9265c34b73f.png)
 
 ***While installing you might see some errors run the following command to install the dependency in order to avoid the error.***
 
-> sudo apt-get install gcc python3-dev
-
-<br>
+```
+sudo apt-get install gcc python3-dev
+```
 
 ***Create a new Frappe site.***
 
-> bench new-site <site_name> --bd-name <site_database_name>
-
-<br>
-<br>
+```
+bench new-site <site_name> --bd-name <site_database_name>
+```
 
 The above command will prompt you for the MySQL root password. Provide the password which you have set for the MySQL root user earlier. It will also ask you to set a new password for the administrator account. You will need this password later to log into the administrator dashboard.
 
 ![10000201000004F80000015436722D45B2D09340](https://user-images.githubusercontent.com/34704464/115141330-6b727d00-a05d-11eb-8184-e2d0aaefacb4.png)
 
-<br>
 
 ***While creating the site you will be prompted to provide mysql password. If it prevents follow the following steps:***
 
-<br>
 
 **Database Login Issues**
 
 In some cases Database may not login, to rectify the issue Please Follow below steps
 
-> sudo nano /etc/mysql/my.cnf
+```
+sudo nano /etc/mysql/my.cnf
+```
 
 Add the following lines at the end:
-<br>
 
-> [mysqld]
-
-> skip-grant-tables
+```
+[mysqld]
+skip-grant-tables
+```
 
 ![10000201000004F80000021A8F54FBEFDC0F7D86](https://user-images.githubusercontent.com/34704464/115141388-c2785200-a05d-11eb-8c2e-180c40be5abc.png)
 
 
-<br>
-
 **Then Restart the service**
 
-> sudo service mysql restart
-
-<br>
+```
+sudo service mysql restart
+```
 
 ***Login to Mysql & follow the command***
-> mysql -u root
-
-<br>
-<hr>
-
-> use mysql
-
-> SELECT * FROM mysql.user WHERE user = 'root'; 
-
+```
+mysql -u root
+use mysql
+SELECT * FROM mysql.user WHERE user = 'root'; 
+```
 ***(Look at the top to determine whether the password column is called password or authentication_string)***
 
-> UPDATE mysql.user SET authentication_string = PASSWORD('123456’) where user = 'root' and host = 'localhost'; - Use the proper password column from above
+```
+UPDATE mysql.user SET authentication_string = PASSWORD('123456’) where user = 'root' and host = 'localhost'; - Use the proper password column from above
 
-> SELECT User, Host, plugin FROM user;
+SELECT User, Host, plugin FROM user;
+```
 
 ***(if Plugin is not mysql_native_password, then set the plugin by the below command)***
 
-> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
-> FLUSH PRIVILEGES;
-> exit;
+```
+UPDATE user SET plugin='mysql_native_password' WHERE User='root';
 
+FLUSH PRIVILEGES;
+
+exit;
+```
 <br>
 
-***
-***
 Remove the <strong>skip-grant-tables</strong> from <strong>/etc/mysql/my.cnf</strong> and restart the service & it's Done
-***
-***
 <br>
 
 ### Now download ERPNext installation files from the remote git repository using Bench.
-> bench get-app erpnext https://github.com/frappe/erpnext
+
+```
+bench get-app erpnext https://github.com/frappe/erpnext
+```
 
 ![10000201000004F8000001F60A62D5F2F1D54C59](https://user-images.githubusercontent.com/34704464/115141420-ea67b580-a05d-11eb-9918-c484917f7358.png)
 
-<br>
 
 ### Install ERPNext on your newly created site.
-> bench --site erp.testsite install-app erpnext
+```
+bench --site erp.testsite install-app erpnext
+```
 
-
-<br>
 You can start the application immediately to check if the application installed successfully. 
 
-> bench start
-
-***
+```
+bench start
+```
 
 ****You might face the error saying: Could not start up: Error in setup***
 
 In such case:
 * Make sure you didn't miss any dependencise.
-* > cd /Desktop/frappe-bench
 
-> sudo chown -R user:user *
-
+```
+cd /Desktop/frappe-bench
+sudo chown -R user:user *
+```
 ***(For my case I’ve applied the following command since my user is mhfahad)***
 
->sudo chown -R mhfahad:mhfahad *
-
-<br>
+```
+sudo chown -R mhfahad:mhfahad *
+```
 
 ## Now start the app with the command:
 ***
-> bench start
-
-***
+```
+bench start
+```
 
 <br>
 <br>
@@ -390,7 +385,7 @@ In such case:
 <br>
 <br>
 
-***
+
 # Create & Add Custom Application to site:
 
 **Creating a custom Module**
@@ -402,51 +397,56 @@ In such case:
 <br>
 
 Navigate to the project
-> bench new-app alesha_product
+
+```
+bench new-app alesha_product
+```
 
 ***This will ask you app specific information along with some default values***
 
 Once the installation is complete, you will have to install the app to the site. By default the site doesn't know the app details.
 
-<br>
 
 In order to install the application to the site you need to apply the following command.
-> bench --site <site_name> install-app <app_or_module_name>
-
+```
+bench --site <site_name> install-app <app_or_module_name>
+```
 In order to check installed apps of a particular site:
-> bench --site <site_name> list-apps
 
+```
+bench --site <site_name> list-apps
+```
 ***There are several site commands. To see all site commands.***
-> bench --site <site_name> --help
+
+```
+bench --site <site_name> --help
+```
 
 The custom app/module is available in the site. Now we have to create doctype for the application to use.
 
 In order to customize the site we need to run the site with enabled developer mode.
 To do that type:
-> bench --site <site_name> set-config --global developer_mode 1
 
+```bench --site <site_name> set-config --global developer_mode 1
+```
 <br>
 <br>
 
 ## DocType
-***
+
 In simple, DocType is the database table name of Frappe Framework.
 You will be directly interecting with database tabels using Frappe's DocType.
 
-<br>
 
 In our custom app/ module we will create two doctypes.
 1. Vendors
 2. Alesha Products
 
-<br>
-
 ### Creating DocType
-***
+
 While in Desk, type "doctype" in the search bar and select the DocType List option. You will be navigated to the DocType list where you will see a bunch of DocTypes. These are the DocTypes that are bundled with the framework.
 
 ***The first doctype we will create is Vendors.***
-***
 
 To create it, click on New.
 1. Enter Name as Alesha Vendors.
@@ -502,9 +502,6 @@ You will see that vandor with your given information has shown in the vendor lis
 7. Than drag the row before the row where you want to break the section.
 
 
-<br>
-<hr>
-<br>
 
 ## Now Add Let's Add the Product DocType to our custom DocType
 ***
