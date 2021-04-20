@@ -82,6 +82,8 @@
   {
    "fieldname": "property_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Property Type",
    "options": "Property Type",
    "reqd": 1
@@ -97,7 +99,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-20 10:53:11.755731",
+ "modified": "2021-04-20 13:41:45.788308",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",
