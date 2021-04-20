@@ -428,7 +428,7 @@ In order to customize the site we need to run the site with enabled developer mo
 To do that type:
 
 ```
-bench --site <site_name> set-config --global developer_mode 1
+bench --site <site_name> set-config developer_mode 1
 ```
 <br>
 <br>
