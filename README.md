@@ -427,7 +427,8 @@ The custom app/module is available in the site. Now we have to create doctype fo
 In order to customize the site we need to run the site with enabled developer mode.
 To do that type:
 
-```bench --site <site_name> set-config --global developer_mode 1
+```
+bench --site <site_name> set-config --global developer_mode 1
 ```
 <br>
 <br>
