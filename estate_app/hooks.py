@@ -101,7 +101,9 @@ doc_events = {
 	# }
 	"Property":{
 		# Controller_Event : Scripting location
-		"before_save": "estate_app.estate_app.doctype.property.events.validate"
+		"before_save": "estate_app.estate_app.doctype.property.events.validate",
+		"on_update": "estate_app.estate_app.doctype.property.events.on_update",
+		"after_insert": "estate_app.estate_app.doctype.property.events.after_insert",
 	}
 }
 
