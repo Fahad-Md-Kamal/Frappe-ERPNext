@@ -96,7 +96,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nSale\nRent\nLease",
+   "options": "Sale\nRent\nLease",
    "reqd": 1
   },
   {
@@ -125,7 +125,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-21 10:08:01.700985",
+ "modified": "2021-04-21 13:49:56.084212",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

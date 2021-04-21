@@ -93,13 +93,17 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+	"Property":{
+		# Controller_Event : Scripting location
+		"before_save": "estate_app.estate_app.doctype.property.events.validate"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
