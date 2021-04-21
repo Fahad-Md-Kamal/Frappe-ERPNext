@@ -2,14 +2,59 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Property', {
-	// setup: function(frm){
-	// 	console.log(frm);
-	// 	console.log(frm.selected_doc['name']);
-	// 	console.log(frm.selected_doc.amenities);
-	// },
+	setup: function(frm){
+		frm.check_amenities_duplicate = function(frm, row){
+			frm.doc.amenities.forEach (item => {
+				if(row.amenity == '' || row.idx == item.idx){
+
+				}
+				else {
+					if(row.amenity == item.amenity) {
+						row.amenity = '';
+						frappe.throw(__(`${item.amenity} already exists row ${item.idx}`));
+						frm.refresh_field('amenities');
+					}
+				}
+			})
+		}
+
+		frm.check_flat_against_outdoor_kitchen = function(frm, row){
+			if(row.amenity == "Outdoor Kitchen" && frm.doc.property_type=="Flat"){
+				let amenity = row.amenity
+				row.amenity = '';
+				frappe.throw(__(`${amenity} cannot exist in a flat`));
+				frm.refresh_field('amenities');
+			}
+		}
+
+		// Compute property price
+		frm.compute_total = function(frm){
+			let total = 0;
+			// loop through the child table
+			frm.doc.amenities.forEach(d => {
+				total = total + d.amenity_price
+			})
+			// new_total
+			let new_total = frm.doc.property_price + total;
+			if (frm.doc.discount){
+				new_total = new_total - (new_total * (frm.doc.discount/100))
+			}
+			console.log(new_total)
+			// set grand_total value
+			frm.set_value('grand_total', new_total)
+		},
+
+		// Copy discount to amenities
+		frm.copy_discount = function(frm){
+			frm.doc.amenities.forEach(d=> {
+				d.discount = frm.doc.discount;
+			});
+			frm.refresh_field('amenities');
+		}
+
+	},
 
 	refresh: function(frm) {
-
 		let btn = frm.add_custom_button('Extra Button', () => {
 			frappe.prompt('Address', ({ value }) => {
 				if (value){
@@ -50,6 +95,28 @@ frappe.ui.form.on('Property', {
 
 		})[0].classList.replace('btn-default','btn-warning');
 
+
+
 	},
 	
+	property_price: function(frm){
+		frm.compute_total(frm);
+	},
+	discount: function(frm){
+		frm.compute_total(frm);
+		frm.copy_discount(frm);
+	}
 });
+
+
+frappe.ui.form.on('Property Amenity Detail', {
+	amenity: function(frm, cdt, cdn){
+		let row = locals[cdt][cdn];
+		frm.check_flat_against_outdoor_kitchen(frm, row);
+		frm.check_amenities_duplicate(frm, row, row.amenity);
+		frm.compute_total(frm);
+	},
+	amenities_remove: function(frm, cdt, cdn) {
+		console.log('Removed')
+	}
+})

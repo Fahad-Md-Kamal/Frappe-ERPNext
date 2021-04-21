@@ -1,12 +1,13 @@
 {
  "actions": [],
- "autoname": "field:amenity",
  "creation": "2021-04-19 17:10:58.362426",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "amenity"
+  "amenity",
+  "amenity_price",
+  "discount"
  ],
  "fields": [
   {
@@ -17,12 +18,27 @@
    "options": "Property Amenity Item",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "depends_on": "amenity",
+   "fetch_from": "amenity.amenity_price",
+   "fetch_if_empty": 1,
+   "fieldname": "amenity_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amenity Price"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Discount"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-04-19 17:13:28.055483",
+ "modified": "2021-04-21 10:48:22.334596",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property Amenity Detail",
