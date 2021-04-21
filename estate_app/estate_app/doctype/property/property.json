@@ -10,12 +10,12 @@
   "address",
   "property_type",
   "property_price",
-  "discount",
   "column_break_3",
   "image",
   "agent",
-  "agent_email",
+  "agent_name",
   "status",
+  "discount",
   "section_break_6",
   "description",
   "amenities_section",
@@ -42,6 +42,7 @@
    "fieldtype": "Attach Image",
    "hidden": 1,
    "label": "Image",
+   "print_width": "1080",
    "read_only": 1
   },
   {
@@ -62,14 +63,6 @@
   {
    "fieldname": "section_break_6",
    "fieldtype": "Section Break"
-  },
-  {
-   "depends_on": "agent",
-   "fetch_from": "agent.agent_name",
-   "fieldname": "agent_email",
-   "fieldtype": "Data",
-   "label": "Agent Name",
-   "read_only": 1
   },
   {
    "collapsible": 1,
@@ -120,12 +113,20 @@
    "fieldtype": "Currency",
    "label": "Grand Total",
    "read_only": 1
+  },
+  {
+   "depends_on": "agent",
+   "fetch_from": "agent.agent_name",
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "read_only": 1
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-21 13:49:56.084212",
+ "modified": "2021-04-21 16:46:36.475847",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

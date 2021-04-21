@@ -1,4 +1,5 @@
 import frappe
+from estate_app.utils import sendmail
 
 def validate(doc, event):
     pass
@@ -24,3 +25,8 @@ def after_insert(doc, event):
     note.insert()
     frappe.db.commit()
     frappe.msgprint(f"{note.title} has been created.")
+    # send mail
+    agent_email = frappe.get_doc('Agent', doc.agent)
+    msg = f"Hello <b>{doc.agent_name}</b>, a property has been created on your behalf."
+    attachments = [frappe.attach_print(doc.doctype, doc.name, file_name=doc.name),]
+    sendmail(doc, [agent_email, 'test@mail.com'], msg, 'New Property', attachments=attachments)
