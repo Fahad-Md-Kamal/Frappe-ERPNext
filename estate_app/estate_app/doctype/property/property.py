@@ -13,7 +13,14 @@ class Property(Document):
 		frappe.msgprint((f'Property <b>{self.name}</b> insertedd successfully'));
 
 
-	# def validate(self):
+	def validate(self):
+		try:
+			frappe.db.sql("""SELECT name, tenant, friends FROM `tabProperty`;""")
+		except Exception as e:
+			error = frappe.log_error(frappe.get_traceback(), f"{e}")
+			frappe.msgprint(f"An error occured see <a href='/app/error-log/{error.name}'> <b>{error.name}</b></a>");
+			
+			# print(e)
 	# 	if (self.property_type == "Flat"):
 	# 		for amenity in self.amenities:
 	# 			if(amenity.amenity == "Outdoor Kitchen"):
