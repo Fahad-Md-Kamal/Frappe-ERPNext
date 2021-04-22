@@ -1,0 +1,44 @@
+<!-- ############################################### -->
+    <!-- This Sections are being used in PDF Customization's Custom HTML format section -->
+
+<!-- ############################################### -->
+<!-- Load Dynamically iterable data from Property Amenity Tables -->
+<div class="col-xs-12 column-break">
+    <div data-fieldname="amenities" data-fieldtype="Table">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th style="width: 40px" class="table-sr">SN</th>
+                    <th style="width: 150px;" class="" data-fieldname="amenities" data-fieldtype="Table"> Amenity</th>
+                    <th style="width: 80px;" class="text-right" data-fieldname="amenities" data-fieldtype="Table">Amenity Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for amn in doc.amenities %}
+                <tr>
+                    <td class="table-sr">{{loop.index}}</td>
+                    <td class="" data-fieldname="amenities" data-fieldtype="Table">
+                        <div class="value">{{amn.amenity}}</div>
+                    </td>
+                    <td class="text-right" data-fieldname="amenities" data-fieldtype="Table">
+                        <div class="value">{{amn.get_formatted('amenity_price', amn)}}</div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Load Another DocType Object with Jinja 2-->
+{% set agent = frappe.get_doc('Agent', doc.agent) %}
+<p>{{doc.agent_name}}</p>
+<img src='{{ agent.image }}' height='200px' width='200px'>
+
+
+<!-- Set the customized print format as default print format -->
+<!-- 1. Go to DocType object -->
+<!-- 2. Click Customize -->
+<!-- 3. Go to View Settings Section -->
+<!-- 4. Type the custom pdf format name the you have created at default print format field. -->
