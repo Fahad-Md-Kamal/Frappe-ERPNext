@@ -554,3 +554,32 @@ Index Web Pages for Search
 You can see your Custom Module at the Left side of all module lists with your Given name and Icon along with
 
 ![Screenshot from 2021-04-18 15-17-03](https://user-images.githubusercontent.com/34704464/115141601-159ed480-a05f-11eb-9b94-21a54e4b4329.png)
+
+
+<br>
+<br>
+<br>
+
+# Upgrading Frappe & ERPnext Version
+
+
+Standared Process and best practice but slower.
+```
+bench switch-to-branch version-13 frappe erpnext --upgrade
+```
+**Please use this for production server**
+
+
+This needs to be nevigated into the app of the project.
+```
+git pull upstream version-13
+```
+
+
+Preferred Process only for development server. 
+```
+bench get-app --branch=version-13 frappe
+
+bench get-app --branch=version-13 erpnext
+```
+**N.B: Please do not use this in production server**
