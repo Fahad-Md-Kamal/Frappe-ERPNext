@@ -504,7 +504,7 @@ You will see that vandor with your given information has shown in the vendor lis
 
 
 
-## Now Add Let's Add the Product DocType to our custom DocType
+## Now Let's Add the Product DocType to our custom DocType
 ***
 
 1. Go to Doctype List.
