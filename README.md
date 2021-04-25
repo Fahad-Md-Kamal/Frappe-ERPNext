@@ -399,7 +399,7 @@ bench start
 Navigate to the project
 
 ```
-bench new-app alesha_product
+bench new-app bigtech_product
 ```
 
 ***This will ask you app specific information along with some default values***
@@ -470,7 +470,7 @@ To create it, click on New.
 4. To save the form, Click save button
 5. add the following text to the auto naming field in the bottom so that the vendor name is unique throughout the list.
 
-    ALM.VEN.#####
+    BGT.VEN.#####
 
 6. In Form Settings section add the insert image to the text box. This lets frappe know which field of the table is image field so that it can handle that field in such way.
 
