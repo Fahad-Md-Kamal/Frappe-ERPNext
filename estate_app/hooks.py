@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from . import __version__ as app_version
+from estate_app.routes import urlpatterns
 
 app_name = "estate_app"
 app_title = "Estate App"
@@ -50,6 +51,9 @@ doctype_js = {
 # role_home_page = {
 #	"Role": "home_page"
 # }
+
+# Website route generator
+website_route_rules = urlpatterns
 
 # Generators
 # ----------
