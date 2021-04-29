@@ -54,7 +54,7 @@
               <div class="row mb-5">
                 <div class="col-4 text-center border-bottom border-top py-3">
                   <span class="d-inline-block text-black mb-0 caption-text">Property Code</span>
-                  <strong class="d-block">{{ property.name }}</strong>
+                  <strong class="d-block" id="property-code">{{ property.name }}</strong>
                 </div>
                   <div class="col-4 text-center border-bottom border-top py-3">
                     <span class="d-inline-block text-black mb-0 caption-text">Home Type</span>
@@ -124,6 +124,9 @@
                   <label for="phone">Phone</label>
                   <input type="text" id="phone" class="form-control" value="{{agent.phone}}" disabled>
                 </div>
+                <div class="form-group">
+                  <input type="button" value="Contact Agetn" id="contact-agent" class="btn btn-primary">
+                </div>
 
               </form>
             </div>
@@ -172,3 +175,8 @@
       </div>
 
       {% endblock content %}
+
+  {% block script %}
+  <script src="/assets/estate_app/www/js/detail.js"></script>
+  
+  {% endblock script %}
