@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from . import __version__ as app_version
-from estate_app.routes import urlpatterns
+from .routes import urlpatterns
+from .jinja import jenvs
 
 app_name = "estate_app"
 app_title = "Estate App"
@@ -54,6 +55,9 @@ doctype_js = {
 
 # Website route generator
 website_route_rules = urlpatterns
+
+jinja = jenvs
+
 
 # Generators
 # ----------
