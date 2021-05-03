@@ -14,10 +14,9 @@ def sendmail(doc, recipients, msg, title, attachments=None):
     frappe.enqueue(method=frappe.sendmail, queue='short', timeout=300, **email_args)
 
 
-def paginate(doctype, page=0, paginate_by=6):
+def paginate(doctype, page=0, conditions=None, paginate_by=6):
     # paginate_by = int(paginate_by)
-    prev, next = 0, 0
-    conditions = " "
+    prev, next, search = 0, 0, False
     query = f"""SELECT 
         name, property_name, status, address, grand_total, image 
         FROM `tab{doctype}` {conditions} 
@@ -44,7 +43,7 @@ def paginate(doctype, page=0, paginate_by=6):
 
     else:
         # This will count total pagenatable size over data.
-        count = frappe.db.sql(f"""SELECT COUNT(name) as count FROM `tab{doctype}`;""", as_dict=True)[0].count
+        count = frappe.db.sql(f"""SELECT COUNT(name) as count FROM `tab{doctype}` {conditions};""", as_dict=True)[0].count
 
         # if the data is more than 4 than the previous page will
         # be set to 0(zero) and next page will be set to 2
@@ -56,8 +55,12 @@ def paginate(doctype, page=0, paginate_by=6):
         # This will execute the query with initail LIMIT size of four.
         properties = frappe.db.sql(query+f"""LIMIT {paginate_by};""", as_dict=True)
     
+    if conditions: 
+        search=True
+
     return{
         'properties':properties,
         'prev': prev,
-        'next': next
+        'next': next,
+        'search': search,
     }

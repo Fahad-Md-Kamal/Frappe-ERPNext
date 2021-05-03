@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "property_name",
+  "city",
   "address",
   "property_type",
   "property_price",
@@ -121,12 +122,19 @@
    "fieldtype": "Data",
    "label": "Agent Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City",
+   "reqd": 1
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-22 14:14:29.392718",
+ "modified": "2021-05-03 11:11:00.135031",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",
