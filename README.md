@@ -1,6 +1,9 @@
 # A guide-line for frappe and ERPNext framework #
 [Official Frappe Documentation](https://frappeframework.com/docs/user/en/basics)
 
+[Installation Process from ERPnext Community](https://github.com/frappe/frappe/wiki/Guide:-Manual-Install-ERPNext-on-Ubuntu-17.xx-and-18.xx-(develop-branch))
+
+
 ### Installation of Frappe framework and ERPNext on ubuntu 20.04 with python3 version ###
 <br>
 
