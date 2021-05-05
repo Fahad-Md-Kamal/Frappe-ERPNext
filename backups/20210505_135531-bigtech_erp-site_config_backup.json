@@ -1,0 +1,10 @@
+{
+ "db_name": "bigtechdb",
+ "db_password": "yUco1W4saYGr0VT4",
+ "db_type": "mariadb",
+ "developer_mode": 1,
+ "encryption_key": "AGgR4njG7KLlxiHcCrKsXXJcuTXxF8rLHTT6ATmWR3w=",
+ "user_type_doctype_limit": {
+  "employee_self_service": 10
+ }
+}
