@@ -12,6 +12,7 @@ app_icon = "octicon-container-24"
 app_color = "#adaada"
 app_email = "faahad.hossain@gmail.com"
 app_license = "MIT"
+app_logo_url = "/assets/estate_app/homeland/icon-brain-blue.png"
 
 # Includes in <head>
 # ------------------
