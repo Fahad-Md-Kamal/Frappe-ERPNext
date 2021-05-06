@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include alesha *.css
+recursive-include alesha *.csv
+recursive-include alesha *.html
+recursive-include alesha *.ico
+recursive-include alesha *.js
+recursive-include alesha *.json
+recursive-include alesha *.md
+recursive-include alesha *.png
+recursive-include alesha *.py
+recursive-include alesha *.svg
+recursive-include alesha *.txt
+recursive-exclude alesha *.pyc
