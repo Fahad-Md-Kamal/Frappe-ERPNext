@@ -278,7 +278,7 @@ sudo apt-get install gcc python3-dev
 ***Create a new Frappe site.***
 
 ```
-bench new-site <site_name> --bd-name <site_database_name>
+bench new-site <site_name> --db-name <site_database_name>
 ```
 
 The above command will prompt you for the MySQL root password. Provide the password which you have set for the MySQL root user earlier. It will also ask you to set a new password for the administrator account. You will need this password later to log into the administrator dashboard.
