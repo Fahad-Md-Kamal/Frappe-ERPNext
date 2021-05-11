@@ -1,0 +1,13 @@
+<h3>List of Users</h3>
+<ol>
+
+    {% for prod in products %}
+    {{prod.title}} <br>
+    {%  endfor %}
+
+{% for user in users %}
+    <li>{{ user.first_name }} {{ user.get("last_name", "") }}</li>
+{% endfor %}
+</ol>
+{index}
+{next}

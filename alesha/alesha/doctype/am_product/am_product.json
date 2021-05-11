@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "autoname": "AML.#####",
+ "creation": "2021-05-08 11:58:02.000993",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "image",
+  "title",
+  "price",
+  "delivery_options",
+  "column_break_5",
+  "vendor",
+  "vendor_email",
+  "route",
+  "section_break_8",
+  "overview",
+  "section_break_10",
+  "categories_section"
+ ],
+ "fields": [
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_options",
+   "fieldtype": "Select",
+   "label": "Delivery Options",
+   "options": "Full Pay\nCash On Delivery"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "AM Vendor"
+  },
+  {
+   "fetch_from": "am_vendor.email",
+   "fieldname": "vendor_email",
+   "fieldtype": "Data",
+   "label": "Vendor Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "overview",
+   "fieldtype": "Text Editor",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "categories_section",
+   "fieldtype": "Table",
+   "label": "Category Name",
+   "options": "AM Category"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-05-08 16:38:01.948259",
+ "modified_by": "Administrator",
+ "module": "Alesha",
+ "name": "AM Product",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "products",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

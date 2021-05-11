@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "autoname": "format:AM-{MM}{YY}-{####}",
+ "creation": "2021-05-09 11:10:33.462511",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "image",
+  "title",
+  "price",
+  "old_price",
+  "percentage",
+  "column_break_5",
+  "vendor",
+  "vendor_contact",
+  "delivery_option",
+  "route",
+  "section_break_9",
+  "overview",
+  "data_11",
+  "categories",
+  "data_15"
+ ],
+ "fields": [
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "read_only": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_option",
+   "fieldtype": "Select",
+   "label": "Delivery Option",
+   "options": "\nFull Pay\nCash On Delivery"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vendor.name",
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor",
+   "options": "Vendor",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vendor.contact",
+   "fieldname": "vendor_contact",
+   "fieldtype": "Data",
+   "label": "Vendor Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "overview",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Overview",
+   "reqd": 1
+  },
+  {
+   "fieldname": "data_11",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "categories",
+   "fieldtype": "Table",
+   "label": "Categories",
+   "options": "AM Category"
+  },
+  {
+   "fieldname": "old_price",
+   "fieldtype": "Float",
+   "label": "Old Price"
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "label": "Percentage"
+  },
+  {
+   "fieldname": "data_15",
+   "fieldtype": "Data"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-05-11 14:24:27.326843",
+ "modified_by": "Administrator",
+ "module": "Alesha",
+ "name": "AML Products",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Services",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

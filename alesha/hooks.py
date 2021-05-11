@@ -1,4 +1,5 @@
 from . import __version__ as app_version
+from .routes import urlpatterns
 
 app_name = "alesha"
 app_title = "Alesha"
@@ -52,6 +53,12 @@ app_license = "MIT"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
+
+
+
+# Website route generator
+# website_route_rules = urlpatterns
+
 
 # Jinja
 # ----------

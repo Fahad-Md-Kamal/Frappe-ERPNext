@@ -1,0 +1,30 @@
+{%  extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="py-20 row">
+    <div class="col-sm-2">
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    <div class="col">
+        <h1>{{ title }}</h1>
+        <p class="lead">By {{ vendor }}</p>
+        <div>
+            {%- if delivery_options == 'Full Pay' -%}
+            <span class="badge badge-success">Full Pay</span>
+            {%- elif delivery_options == 'Cash On Delivery' -%}
+            <span class="badge badge-primary">Cas On Delivery</span>
+            {%- endif -%}
+        </div>
+        {% if categories_section %}
+                <p class="font-weight-bold">Product Catogery: </p>
+            {% for cat in categories_section %}
+                <span class="text-muted">- {{ cat.category }}</span><br>
+            {% endfor %}
+        {% endif %}
+        <p>{{ overview }}</p>
+
+    </div>
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->
